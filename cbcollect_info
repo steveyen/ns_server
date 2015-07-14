@@ -296,7 +296,8 @@ def basedir():
 def make_os_tasks():
     programs = " ".join(["moxi", "memcached", "beam.smp",
                          "couch_compact", "godu", "sigar_port",
-                         "cbq-engine", "indexer", "projector", "goxdcr"])
+                         "cbq-engine", "indexer", "projector", "goxdcr",
+                         "cbft"])
 
     _tasks = [
         UnixTask("uname", "uname -a"),
@@ -547,7 +548,7 @@ def make_product_task(guts, initargs_path, options):
                       "reports.log", "xdcr_trace.log", "http_access.log",
                       "http_access_internal.log", "ns_couchdb.log",
                       "goxdcr.log", "query.log", "projector.log", "indexer.log",
-                      "metakv.log"]],
+                      "metakv.log", "cbft.log"]],
 
         [AllOsTask("memcached stats %s" % kind,
 
