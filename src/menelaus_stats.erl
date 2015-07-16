@@ -440,6 +440,8 @@ section_nodes("@index-"++_) ->
     ns_cluster_membership:index_active_nodes(ns_config:latest(), actual);
 section_nodes("@xdcr-"++Bucket) ->
     ns_bucket:live_bucket_nodes(Bucket);
+section_nodes("@fulltext") ->
+    ns_cluster_membership:cbft_active_nodes(ns_config:latest(), actual);
 section_nodes(Bucket) ->
     ns_bucket:live_bucket_nodes(Bucket).
 
